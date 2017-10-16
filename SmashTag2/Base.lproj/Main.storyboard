@@ -115,7 +115,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOn-S0-gnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="61"/>
+            <point key="canvasLocation" x="1774" y="107"/>
         </scene>
         <!--Mentions Table View Controller-->
         <scene sceneID="yYK-Fj-YVv">
@@ -178,7 +178,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZ6-eW-sK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2084" y="-1108"/>
+            <point key="canvasLocation" x="1774" y="-748"/>
         </scene>
         <!--Tweet Image View Controller-->
         <scene sceneID="fE2-li-lBc">
@@ -211,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ag-ng-Jd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3694" y="-821"/>
+            <point key="canvasLocation" x="2742" y="-749"/>
         </scene>
         <!--Smash Tweeters Table View Controller-->
         <scene sceneID="b2F-cV-Nzs">
@@ -255,7 +255,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kE-zA-Oiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2895" y="107"/>
+            <point key="canvasLocation" x="2742" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xbh-aO-S0l">
@@ -285,15 +285,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Recently" textLabel="ndB-h0-o6D" style="IBUITableViewCellStyleDefault" id="PCF-ky-dBZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Recently" textLabel="ndB-h0-o6D" style="IBUITableViewCellStyleDefault" id="PCF-ky-dBZ">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCF-ky-dBZ" id="e9z-br-feL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ndB-h0-o6D">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="293" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -303,6 +303,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="Ru2-DS-osI" kind="show" identifier="top100Search" id="gTO-24-UWT"/>
+                                    <segue destination="nQg-zB-MC6" kind="show" identifier="PopularDetails" trigger="accessoryAction" id="lpo-jI-dcN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -315,7 +316,54 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJG-RK-RtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2252" y="896.40179910044981"/>
+            <point key="canvasLocation" x="1774" y="902"/>
+        </scene>
+        <!--Popular Tweets View Controller-->
+        <scene sceneID="2II-mv-8x2">
+            <objects>
+                <tableViewController id="nQg-zB-MC6" customClass="PopularTweetsViewController" customModule="SmashTag2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yyt-ae-Asu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopularTweet Cell" textLabel="CHo-L9-0WZ" detailTextLabel="513-1S-43b" style="IBUITableViewCellStyleSubtitle" id="nf8-uW-iU2">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nf8-uW-iU2" id="fhE-c8-mwz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CHo-L9-0WZ">
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="513-1S-43b">
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ru2-DS-osI" kind="show" identifier="popularSearch" id="egs-Wn-A5a"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nQg-zB-MC6" id="b8R-O0-acL"/>
+                            <outlet property="delegate" destination="nQg-zB-MC6" id="hej-2O-iSt"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c1w-CJ-l6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2742" y="902"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5su-2p-Aea">
@@ -353,10 +401,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdR-hT-5Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312.8" y="896.40179910044981"/>
+            <point key="canvasLocation" x="1004" y="902"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Se0-l4-2bu"/>
+        <segue reference="egs-Wn-A5a"/>
     </inferredMetricsTieBreakers>
 </document>

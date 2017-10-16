@@ -119,7 +119,6 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         if let tweetCell = cell as? TweetTableViewCell {
             tweetCell.tweet = tweet
         }
-        
 
         return cell
     }

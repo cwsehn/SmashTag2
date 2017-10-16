@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class RecentSearchesTableViewController: UITableViewController {
     
-    var recentSearches: [String] = UserDefaults.standard.object(forKey:"last100Searches") as? [String] ?? [String]()
+    private var recentSearches: [String] = UserDefaults.standard.object(forKey:"last100Searches") as? [String] ?? [String]()
+    
+    var container: NSPersistentContainer? =
+        (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Recently Searched"
+        navigationItem.title = "Recent Searches"
 
     }
 
@@ -40,8 +44,7 @@ class RecentSearchesTableViewController: UITableViewController {
         cell.textLabel?.text = searchItem
         
         return cell
-    } 
-    
+    }
     
     
      // MARK: - Navigation
@@ -57,6 +60,15 @@ class RecentSearchesTableViewController: UITableViewController {
                     seguedToMVC3?.searchText = searchItem
                     seguedToMVC3?.searchTextField.text = searchItem
                 }
+            case "PopularDetails":
+                if let cell = sender as? UITableViewCell,
+                    let indexPath = tableView.indexPath(for: cell) {
+                    let searchItem = recentSearches[indexPath.row]
+                    let seguedToMVC4 = segue.destination as? PopularTweetsViewController
+                    seguedToMVC4?.mention = searchItem
+                    //seguedToMVC4?.container = container
+                }
+                
             default:
                 break
             }
@@ -66,6 +78,8 @@ class RecentSearchesTableViewController: UITableViewController {
     
     
 }
+
+
     
 
 
